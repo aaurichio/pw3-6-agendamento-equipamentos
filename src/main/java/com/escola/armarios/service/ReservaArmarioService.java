@@ -67,8 +67,6 @@ public class ReservaArmarioService {
         return repository.save(reserva);
     }
 
-    // ---------- Regras de negócio ----------
-
     private void validarPeriodo(ReservaArmario reserva) {
         if (!reserva.getDataFim().isAfter(reserva.getDataInicio())) {
             throw new RegraNegocioException("A data de fim deve ser depois da data de início");
